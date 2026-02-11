@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.io.IOException;
+import java.util.InputMismatchException;
 
 /**
  * CityPopulationAnalyzer
@@ -43,7 +44,7 @@ public class CityPopulationAnalyzer {
      * @param filename the path to the data file
      * @throws IOException, InputMismatchException if the file cannot be found or read
      */
-    public void readAndSortData(String filename)  {
+    public void readAndSortData(String filename) throws IOException, InputMismatchException{
         // TODO: Create a File object with the filename
         // TODO: Create a Scanner to read from the file
         
@@ -54,6 +55,21 @@ public class CityPopulationAnalyzer {
         // HINT: Call insertSorted() for each city/population pair
         // HINT: If array is full, call resizeArrays()
         // TODO: Close the scanner
+        File file = new File(filename);
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            String city = scanner.nextLine();
+            Double pop = -1.0;
+            if(scanner.hasNextLine()){
+                pop = Double.parseDouble(scanner.nextLine());
+                pop = scanner.nextDouble();
+            }
+            
+        }
+        
+        scanner.close();
+
+
         
         
         System.out.println("Successfully read " + count + " cities from " + filename);
