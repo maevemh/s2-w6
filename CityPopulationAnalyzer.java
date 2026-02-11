@@ -62,17 +62,18 @@ public class CityPopulationAnalyzer {
             Double pop = -1.0;
             if(scanner.hasNextLine()){
                 pop = Double.parseDouble(scanner.nextLine());
-                pop = scanner.nextDouble();
             }
+            System.out.println(city + " "+  pop);
             
-        }
+        } 
+        
         
         scanner.close();
 
 
         
         
-        System.out.println("Successfully read " + count + " cities from " + filename);
+        
     }
     
     /**
